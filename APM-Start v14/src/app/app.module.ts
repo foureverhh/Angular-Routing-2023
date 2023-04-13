@@ -14,8 +14,7 @@ import { PageNotFoundComponent } from './page-not-found.component';
 import { ProductModule } from './products/product.module';
 import { UserModule } from './user/user.module';
 import { MessageModule } from './messages/message.module';
-import { RouterModule } from '@angular/router';
-import { ProductListComponent } from './products/product-list.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   imports: [
@@ -25,13 +24,7 @@ import { ProductListComponent } from './products/product-list.component';
     ProductModule,
     UserModule,
     MessageModule,
-    RouterModule.forRoot([
-      { path: 'welcome', component: WelcomeComponent },
-      // products url is handled by the product module
-      // { path: 'products', component: ProductListComponent },
-      { path: '', redirectTo: 'welcome', pathMatch: 'full' },
-      { path: '**', component: PageNotFoundComponent }
-    ]),
+    AppRoutingModule
   ],
   declarations: [
     AppComponent,
