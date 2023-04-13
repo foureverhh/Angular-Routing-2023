@@ -27,7 +27,8 @@ import { ProductListComponent } from './products/product-list.component';
     MessageModule,
     RouterModule.forRoot([
       { path: 'welcome', component: WelcomeComponent },
-      { path: 'products', component: ProductListComponent },
+      // products url is handled by the product module
+      // { path: 'products', component: ProductListComponent },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: '**', component: PageNotFoundComponent }
     ]),
