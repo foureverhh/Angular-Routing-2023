@@ -10,18 +10,18 @@
 
       <div class="row mt-2">
         <label class="col-md-2 col-form-label"
-               for="productNameId">Product Name</label>
+              for="productNameId">Product Name</label>
         <div class="col-md-8">
           <input class="form-control"
-                 id="productNameId"
-                 type="text"
-                 placeholder="Name (required)"
-                 required
-                 minlength="3"
-                 [(ngModel)]=product.productName
-                 name="productName"
-                 #productNameVar="ngModel"
-                 [ngClass]="{'is-invalid': (productNameVar.touched || productNameVar.dirty) && !productNameVar.valid }" />
+                id="productNameId"
+                type="text"
+                placeholder="Name (required)"
+                required
+                minlength="3"
+                [(ngModel)]=product.productName
+                name="productName"
+                #productNameVar="ngModel"
+                [ngClass]="{'is-invalid': (productNameVar.touched || productNameVar.dirty) && !productNameVar.valid }" />
           <span class="invalid-feedback">
             <span *ngIf="productNameVar.errors?.['required']">
               Product name is required.
@@ -35,17 +35,17 @@
 
       <div class="row mt-2">
         <label class="col-md-2 col-form-label"
-               for="productCodeId">Product Code</label>
+              for="productCodeId">Product Code</label>
         <div class="col-md-8">
           <input class="form-control"
-                 id="productCodeId"
-                 type="text"
-                 placeholder="Code (required)"
-                 required
-                 [(ngModel)]=product.productCode
-                 name="productCode"
-                 #productCodeVar="ngModel"
-                 [ngClass]="{'is-invalid': (productCodeVar.touched || productCodeVar.dirty) && !productCodeVar.valid }" />
+                id="productCodeId"
+                type="text"
+                placeholder="Code (required)"
+                required
+                [(ngModel)]=product.productCode
+                name="productCode"
+                #productCodeVar="ngModel"
+                [ngClass]="{'is-invalid': (productCodeVar.touched || productCodeVar.dirty) && !productCodeVar.valid }" />
           <span class="invalid-feedback">
             <span *ngIf="productCodeVar.errors?.['required']">
               Product code is required.
@@ -56,7 +56,7 @@
 
       <div class="row mt-2">
         <label class="col-md-2 col-form-label"
-               for="descriptionId">Description</label>
+              for="descriptionId">Description</label>
         <div class="col-md-8">
           <textarea class="form-control"
                     id="descriptionId"
@@ -80,7 +80,8 @@
           <button class="btn btn-outline-secondary mr-3"
                   style="width:80px"
                   type="button"
-                  title="Cancel your edits">
+                  title="Cancel your edits"
+                  [routerLink]="['/products']">
             Cancel
           </button>
           <button class="btn btn-outline-warning"
