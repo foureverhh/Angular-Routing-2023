@@ -22,3 +22,13 @@
     </div>
   </div>
 </div>
+<div>
+  <p>send optional value to /products</p>
+  <p>send <a [routerLink]="['/products', { info: 'optionl value' }]"> info</a> by optional parameter and receive by this.route.snapshot.get('info')</p>
+</div>
+<div>
+  <p>send optional value to /welcome itself</p>
+  <p>init and reset <a [routerLink]="['/welcome', { counter: 1 }]"> <b>counter</b> </a> by optional parameter and receive by this.route.snapshot.get('counter')</p>
+  <p>init or reset counter = {{counter}}</p>
+  <p>click <a (click)="addCounter()"><b>+</b></a> to increas counter by 1 to  {{counter}}</p>
+</div>
