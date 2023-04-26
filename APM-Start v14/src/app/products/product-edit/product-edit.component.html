@@ -5,6 +5,44 @@
 
   <div class="card-body"
        *ngIf="product">
+      <div class="wizard">
+        <a [routerLink]="['info']">
+          Basic Information
+        </a>
+        <a [routerLink]="['tags']">
+          Search Tags
+        </a>
+      </div>
+      <router-outlet></router-outlet>
+      <div class="row mb-2">
+        <div class="col-md-4">
+          <button 
+              class="btn btn-primary mr-3"
+              style="width:80px"
+              type="button"
+              tile="Save your entered data"
+              (click)="saveProduct()">
+            Save
+          </button>
+          <button 
+            class="btn btn-outline-secondary mr-3"
+            style="width:80px"
+            type="button"
+            tile="Cancel your edits"
+            [routerLink]="['/products']">
+            Cancel
+          </button>
+          <button 
+            class="btn btn-outline-secondary mr-3"
+            style="width:80px"
+            type="button"
+            title="Delete the button"
+            (click)="deleteProduct()">
+            Delete
+          </button>
+        </div>
+      </div>
+    <!--
     <form novalidate
           #productForm="ngForm">
 
@@ -94,6 +132,7 @@
         </div>
       </div>
     </form>
+    -->
   </div>
 </div>
 

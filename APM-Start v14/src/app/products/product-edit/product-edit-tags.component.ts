@@ -11,14 +11,11 @@ export class ProductEditTagsComponent implements OnInit {
   newTags = '';
   product: Product | null | undefined;//= { id: 1, category: 'test', tags: ['test'] };
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute) { 
+    console.log("tag", this.route.snapshot.data['resolvedData'])
+  }
 
   ngOnInit(): void {
-    this.route.data.subscribe(data => {
-      const resolvedData: ProductResolved = data['resolvedData'];
-      this.errorMessage = resolvedData.error;
-      this.product = resolvedData.product;
-    });
     /*
     const resovledData: ProductResolved = this.route.snapshot.data['resolvedData'];
     this.errorMessage = resovledData.error;
