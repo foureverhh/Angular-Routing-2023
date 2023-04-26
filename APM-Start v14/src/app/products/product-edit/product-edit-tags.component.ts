@@ -14,9 +14,16 @@ export class ProductEditTagsComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.route.data.subscribe(data => {
+      const resolvedData: ProductResolved = data['resolvedData'];
+      this.errorMessage = resolvedData.error;
+      this.product = resolvedData.product;
+    });
+    /*
     const resovledData: ProductResolved = this.route.snapshot.data['resolvedData'];
     this.errorMessage = resovledData.error;
     this.product = resovledData.product;
+    */
   }
 
   // Add the defined tags
